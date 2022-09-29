@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>JS Calculatro</title>
+</head>
+<body>
+    <div class="calculator">
+        <div class="output">
+          <input type="text" class="d" id="myResult" readonly>
+        
+        </div>
+        <div class="button-grp">
+          <div class="button-grp1">
+            <button onclick="calculate('7')">7</button>
+            <button onclick="calculate('8')">8</button>
+            <button onclick="calculate('9')">9</button>
+            <button onclick="calculate('4')">4</button>
+            <button onclick="calculate('5')">5</button>
+            <button onclick="calculate('6')">6</button>
+            <button onclick="calculate('1')">1</button>
+            <button onclick="calculate('2')">2</button>
+            <button onclick="calculate('3')">3</button>
+            <button onclick="calculate('.')"><b style="font-weight:900;">.</b></button>
+            <button onclick="calculate('0')">0</button>
+            <button id="delete" onclick="Delete()">C</button>
+            <button id="off" onclick="off()">OFF</button>
+            <button id="on" onclick="on()">On</button>
+            <button onclick="Answer()">=</button>
+          
+          </div>
+          <div class="button-calculaterp2">
+            <button onclick="calculate(' + ')">+</button>
+            <button onclick="calculate(' - ')">-</button>
+            <button onclick="calculate(' * ')">*</button>
+            <button onclick="calculate(' % ')">%</button>
+            <button onclick="calculate(' / ')">/</button>
+      
+          
+          </div>  
+        </div>
+      </div>
+
+  <h2 style="text-align:right; color:white" > Calculatro made by JavaScript</h2>
+
+
+<script>
+    // step 1
+    function Delete(){
+  document.getElementById('myResult').value = '';
+    }
+ // step 2
+    function calculate(newValue){
+        document.getElementById('myResult').value+=newValue
+    }
+ // step 3
+    function Answer(){
+  var a = document.getElementById('myResult').value;
+  var b= eval(a);
+  document.getElementById('myResult').value=b
+    }
+
+    function off(){
+        field= document.getElementById('myResult');
+        field.style.backgroundColor='black';
+    }
+    function on(){
+        field= document.getElementById('myResult');
+        field.style.backgroundColor='white';
+    }
+    
+    
+</script>
+
+</body>
+</html>
